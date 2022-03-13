@@ -1,0 +1,247 @@
+/* Tailwind Stuff */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Permanent+Marker&display=swap");
+/* ------------------------------------------------- */
+/*                       Styles                      */
+/* ------------------------------------------------- */
+
+/* ---------------------- Body --------------------- */
+html,
+body {
+  font-family: "Kanit", sans;
+  font-weight: 500;
+  @apply bg-white dark:bg-purple-500 text-purple-500 dark:text-white  min-w-full min-h-full h-full;
+  background-size: 304px 304px;
+  background-position: center;
+}
+.card {
+  @appply;
+}
+.svg {
+  @apply text-purple-500 dark:text-white fill-current p-8  w-36 h-36;
+}
+/****************************************************************************/
+/* Animations */
+/****************************************************************************/
+.overflow-ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.animate-record-spin {
+  -webkit-animation: spin 8s linear infinite;
+  animation: spin 9s linear infinite;
+}
+
+::-moz-selection {
+  background-color: #313847;
+  color: #f4f4f7;
+}
+
+::selection {
+  background-color: #313847;
+  color: #f4f4f7;
+}
+
+@-webkit-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 0px 100px;
+  }
+}
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 0px 100px;
+  }
+}
+@-webkit-keyframes bg-scrolling {
+  0% {
+    background-position: 0px 100px;
+  }
+}
+@keyframes bg-scrolling {
+  0% {
+    background-position: 0px 100px;
+  }
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 50%;
+  }
+  50% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 50%;
+  }
+}
+
+.logo-head {
+  -webkit-animation: rotation 25s infinite linear;
+}
+
+.blink {
+  -webkit-animation: blinker 30s linear infinite;
+  animation: blinker 30s linear infinite;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@-webkit-keyframes blinker {
+  50% {
+    opacity: 25%;
+  }
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 25%;
+  }
+}
+
+.animated-social {
+  stroke-dasharray: 3;
+  -webkit-animation: blinker 10s infinite linear;
+  animation: blinker 10s infinite linear;
+}
+
+@-webkit-keyframes dash {
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
+.indent-sm {
+  text-indent: 2rem;
+}
+.indent-md {
+  text-indent: 3rem;
+}
+.indent-lg {
+  text-indent: 4rem;
+}
+/****************************************************************************/
+/* Base layer styles */
+/****************************************************************************/
+@layer base {
+  h1 {
+    @apply rounded-3xl  p-0 text-5xl;
+    font-family: "Permanent Marker", sans;
+    font-weight: 900;
+  }
+  h2 {
+    @apply text-2xl;
+  }
+  p {
+    @apply mb-4;
+  }
+
+  a {
+    @apply text-gray-600 hover:text-gray-400 dark:text-gray-200 dark:hover:text-gray-50;
+  }
+}
+
+/* Post styles */
+.prose {
+  @apply min-w-full;
+}
+
+.prose code {
+  @apply text-gray-200 px-1 py-0.5  rounded-md   bg-gray-800 bg-opacity-100;
+}
+.prose a {
+  @apply text-links hover:text-gray-400 dark:text-gray-100 dark:hover:text-gray-50;
+}
+
+/* Prism Styles */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  @apply text-gray-700 dark:text-gray-300;
+}
+
+.token.punctuation {
+  @apply text-gray-700 dark:text-gray-300;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  @apply text-green-500;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  @apply text-purple-500;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  @apply text-yellow-500;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  @apply text-blue-500;
+}
+
+.token.function,
+.token.class-name {
+  @apply text-pink-500;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  @apply text-yellow-500;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  @apply text-gray-50;
+}
+
+/* Remark Styles*/
+
+.colorful {
+  font-family: "Dimitri", monospace;
+  background: linear-gradient(
+    -32deg,
+    #8b9cbe,
+    #b2bfd9,
+    #e9efff,
+    #8b9cbe
+  ) !important;
+  animation: AnimationName 5s infinite;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-box-decoration-break: clone !important;
+  box-decoration-break: clone !important;
+}
