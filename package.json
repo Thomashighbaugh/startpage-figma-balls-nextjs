@@ -17,6 +17,7 @@
     "date-fns-tz": "^1.1.6",
     "moment": "^2.29.1",
     "next": "^11.1.2",
+    "next-themes": "^0.1.1",
     "postcss": "^8.3.8",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
