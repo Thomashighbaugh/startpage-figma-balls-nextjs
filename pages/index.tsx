@@ -12,17 +12,17 @@ const Startpage = () => {
     >
       <div className="flex flew-row items-end content-end justify-end">
 <ThemeSwitch/></div>
-<div className="flex flex-col h-full w-full  p-12 pt-6" >
-<h1 className="text-purple-500 dark:text-white justify-center text-center   pb-24 ">Good Day!</h1>
+<div className="flex flex-col h-full w-full  p-12 pt-6">
+<h1 className="text-purple-500 dark:text-white justify-center text-center pb-24">Good Day!</h1>
 <div className="lg:space-x-8 flex flex-col lg:flex-row">
-        <div className=" w-full justify-center items-center content-center lg:flex lg:flex-col ">
+        <div className=" w-full justify-center items-center content-center ">
 <Searchbar/>
 </div>
 
-        
+
 
       </div>
-      
+
       <Container />
       </div>
 <Footer/>

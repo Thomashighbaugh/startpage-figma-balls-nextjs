@@ -17,7 +17,7 @@ function Searchbar() {
     if (term !== '') search()
   }, [enterPress])
 
-  return <div className=" flex flex-row align-middle justify-center  h-20  content-center dark:bg-white  bg-purple-500   pb-5 p-1 rounded-lg ">
+  return <div className=" flex flex-row align-middle justify-center  h-20  lg:mr-48 lg:ml-48  content-center dark:bg-white  bg-purple-500   pb-5 p-1 rounded-lg ">
 
     <input type="text"
       className="align-middle bg-white dark:bg-purple-500 placeholder-gray-200 w-full  max-h-16 h-14 border-0 rounded-l-md text-2xl
