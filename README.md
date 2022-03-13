@@ -1,45 +1,24 @@
-<div id="top"></div>
+<h1>Startpage</h1>
+<h2>"Figma Balls" Rewrite</h2>
 
-<br />
+<h3>Why Did I Make This</h3>
+<p>I saw a startpage posted on the subreddit <code>r/startpages</code> that I thought looked nice, but when I looked around for the source code there was none to be found. Sure I could have evaluated the HTML+CSS using Firefox's developer tools, which I did actually, but I thought it would be a decent challenge to recreate the site as precisely as possible and post it for the enjoyment and, more likely, learning process of others who would be benefitted by a repository that created the same site. So I wrote this and posted it on Reddit. </p>
 
-<div align="center">
+<h3>What's With the Name</h3> 
+<p> Don't ask me, I didn't name it. On the site that was posted on the Reddit post it went by the name "idiot" but on Reddit it was posted as "Figma Balls" so I went with the latter name as it was less offensive. </p>
   
-  <img src="https://i.redd.it/siiau65zims71.png" />
+  <h3>Can I Locally Host This Like Other Startpages?</h3>
+  <p>The tech stack employed here is not suitable for local hosting unless you build the Next.js site locally and run the site from the build files. Otherwise, it makes sense to instead either bookmark the hosted version and use it, or fork the repo and host your own on a static hosting site, like Vercel (which is what I tend to use) or Netlify or whatever. <strong>In my opinion, it is probably a bad idea to host a site locally as it is easily lost if your computer fails or the files get deleted, among other tradegies common with computers, so I tend to back everything up to Github and since its already here, might as well host it since that's free!</strong></p> 
+  <h3> Is This an Exact Replica of the Original Post</h3>
+  <p> While it is pretty close, its not a perfect replica. I took artistic liberty replacing the font for the links themselves, using Linux I don't have Helvetica available on my system and find the Microsoft fonts to be... not very attractive, so I used a Google Font I like a lot called <strong>Kanit</strong>. The only other differences are some minor differences with sizing and spacing, though I tried to minimize these to the grestest extent possible, they still persist but do not impede the use of the site as a startpage and do not vary all that much from the original. Were I not replicating another site's form and function, I would have definitely added an svg pattern background and probably gone with more, slimmer link cards.</p>
+  <h3>The Original Site is HTML+CSS (probably), but What is This?</h3>
+  <p>The employed tech stack is as follows: </p>
+  <ul>
+  <li><strong>TSX</strong> - React + Typescript - React because I like the way that React is written, separating components into isolated files just makes sense to me. Typescript because its popular and supposedly safer than Javascript without being that much more to write and providing a somewhat unique challenge sometimes that I do enjoy. </li>
+  <li><strong>Next.js</strong> - really a more targeted, less complex to configure utilization of webpack that generates a static HTML+CSS site out of React components. It has a much better developer experience than Gatsby, since it is less prone to extremely long build times or any unnecessary baggage. This translates into faster loading times for users, which with this site makes little difference but were you to expand the site a bit, would quickly make up for the extra configuration in terms of simplifying much of the process.</li>
+  <li><strong>next-themes</strong> - an extension for Next.js I used to provide the dark/light toggle mode.</li>
+  <li><strong>SVG</strong> - all of the images used in the site are SVG tags within components. I nested them within TSX components to be able to apply the different colors to them when toggling between light and dark mode as the original posted site does. Using tailwind, this is done with the classes, specifically setting "text-purple-500 dark:text-white fill-current" classes to the "className" attribute of the SVG-in-TSX component. Were I not intending to reproduce the look and functionality exactly of another site, I probably would have done this differently but it worked out pretty well so I can't complain too much.</li>
+  <li><strong>tailwind.css</strong> - at present my favorite way of expanding upon what CSS can easily accomplish by itself, I like using tailwind because it provides consistency in appearance and is mostly implemented as classes in the JSX, enabling all aspects of a component to be in one file thus increasing its "Atomic" design and simplifying modifing and thus mantainence of the component in the future. I often reuse my tailwind configuration between projects, changing bits as needed (such as adding colors) but most of my custom values for various classes like height and width are pretty consistent thus I just copy the one file, no need for scaffolding scripts and complex interweaving files as I was doing with SCSS before or adding additional complexity to files creating "Styled" variants of my components. </li>
+  <li> <strong>Vercel</strong> - Vercel is the hosting platform I use for pretty much whatever I can (in terms of websites) because it so seemlessly integrates with Github/Gitlab repositories, is free to use and has a pleasant UI that makes it exceptionally easy to accomplish whatever task one needs without extra fuss or surprise charges for overages. 
   
-  <h1 align="center">homie</h1>
-
-  <p align="center">
-    A minimalistic personal dashboard. 
-  </p>
-</div>
-
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#disclaimer">Disclaimer</a>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#license">License</a></li>
-  </ol>
-</details>
-
-### Disclaimer
-This codebase is super messy since it's intended to be a personal 5 minutes project until, by community demand, I've open-sourced it. I'm not sure I'll find the time (and will) to refactor this project, so open issues if you want, but bear with me as I cannot guarantee acceptable response times.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-### Usage
-Provide the following environment variables (put them inside a `.env.local` file in the project's root folder when running locally):
-```env
-LOCATION_LATITUDE=12.3456
-LOCATION_LONGITUDE=12.3456
-OPENWEATHERMAP_API_KEY=foo12bar34
-```
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-### License
-
-Distributed under the aGPL v3 License.
-<p align="right">(<a href="#top">back to top</a>)</p>
+  </ul>
